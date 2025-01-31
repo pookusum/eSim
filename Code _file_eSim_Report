@@ -1,0 +1,87 @@
+# eSim 2.4 Installation Report on Ubuntu 23.04
+
+## Introduction
+
+This document outlines the process of installing eSim 2.4 on Ubuntu 23.04 via VirtualBox, including the challenges encountered and the steps taken to resolve them.
+
+## Installation Process
+
+1. Downloaded eSim 2.4 zip file from the official FOSSEE website.
+2. Extracted the zip file:
+
+3. Attempted to run the installation script:
+
+## Challenges Faced and Solutions
+
+## 1. Incorrect Script Name
+
+Problem:Initially encountered an error: "Unable to locate package eSim.sh"
+
+Solution:
+- Verified the correct file name is "install-eSim.sh"
+- Made the script executable:
+
+## 2. Missing Python3-distutils Package
+
+Problem: The script failed due to missing python3-distutils package.
+Error: Package 'python3-distutils' has no installation candidate.
+
+Attempted Solutions:
+a. Tried direct installation:
+Result: Package not found
+
+b. Attempted to install python3-full:
+Result: Did not resolve the issue
+
+c. Tried installing specific Python version package:
+Result: Did not resolve the issue
+
+d. Installed setuptools:
+Result: Partially successful, but didn't fully resolve the issue
+
+e. Checked and updated package sources:
+Result: Did not resolve the issue
+
+f. Attempted manual download and installation:
+Result: Package installed, but dependency issues persisted
+
+Workaround: Commented out the python3-distutils dependency check in the installation script to proceed.
+
+## 3. Missing KiCad Dependency
+
+Problem: Installation failed due to missing KiCad software.
+
+Solution:
+
+## 4. NgSpice Issues
+
+Problem: Required specific version of NgSpice.
+Note: Version compatibility needs verification.
+
+## 5. Python Dependencies
+
+Problem: Some required Python packages were missing.
+
+### 6. eSim Launch Failure
+
+Problem: eSim didn't launch after installation.
+
+Troubleshooting Steps:
+- Verified installation path: `/opt/eSim/eSim`
+- Checked for error messages during launch
+- Ensured all dependencies were correctly installed
+
+Partial Resolution: Run the application from the terminal to capture error messages:
+
+## Conclusion
+
+The installation of eSim 2.4 on Ubuntu 23.04 presented several challenges, primarily related to package dependencies and compatibility issues. While most problems were resolved through package installations and script modifications, the python3-distutils issue remains a significant hurdle.
+
+## Recommendations
+
+1. Update the installation script for compatibility with Ubuntu 23.04.
+2. Consider using a virtual environment for Python dependencies.
+3. Provide more detailed error messages in the installation documentation.
+4. Regularly update the dependency list for newer Ubuntu versions.
+
+This report documents the installation process, challenges faced, and steps taken to address them, serving as a resource for improving the eSim installation process and assisting future users.
